@@ -1,6 +1,9 @@
 import { useState } from "react";
 import type { treeNode } from "../types/types"
 import "./TreeNode.css"
+import { GoFileDirectoryFill } from "react-icons/go";
+import { FaFile } from "react-icons/fa";
+import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 
 interface Props {
   node: treeNode;
@@ -18,7 +21,7 @@ export const TreeNode = (props: Props) => {
   return (
     <li className="tree-node">
       <div onClick={toggleNode}>
-        {(props.node.children || props.node.items) && (isExpanded ? '[-] ' : '[+] ')}{props.node.name}
+        {(props.node.children || props.node.items) && (isExpanded ? <SlArrowDown /> : <SlArrowRight />)}<GoFileDirectoryFill /> <span>{props.node.name}</span>
       </div>
       {isExpanded && props.node.children && props.node.children.length > 0 && (
         <ul>
@@ -38,7 +41,7 @@ export const TreeNode = (props: Props) => {
                 backgroundColor: props.selectedItem?.includes(item.item_id) ? "#d3d3d3" : "",
               }}
             >
-              <u>{item.name}</u>
+              <FaFile /><u>{item.name}</u>
             </li>
           ))}
         </ul>
