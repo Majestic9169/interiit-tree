@@ -7,20 +7,30 @@ import { ItemDisplay } from '../components/ItemDisplay';
 
 function App() {
   const [selected, select] = useState<string | null>(null);
-  console.log(selected);
+  const [searchItem, setSearchItem] = useState<string>('')
+
 
   return (
-    <div className="App">
-      <TreeComponent
-        value={selected}
-        onChange={select}
-        data={GodownData}
-        items={ItemsData}
-      />
-      <div className="item-display">
-        <ItemDisplay selectedItem={selected} />
+    <>
+      <div className='input'>
+        <input
+          type="text"
+          value={searchItem}
+          placeholder="type to search"
+        />
       </div>
-    </div>
+      <div className="App">
+        <TreeComponent
+          value={selected}
+          onChange={select}
+          data={GodownData}
+          items={ItemsData}
+        />
+        <div className="item-display">
+          <ItemDisplay selectedItem={selected} />
+        </div>
+      </div>
+    </>
   );
 }
 
