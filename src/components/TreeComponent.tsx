@@ -5,6 +5,8 @@ import { TreeNode } from "./TreeNodeComponent";
 interface Props {
   data: Godowns
   items: Items
+  value: string | null // selected element
+  onChange: (id: string) => void // method to select element
 }
 
 export const TreeComponent = (props: Props) => {
