@@ -1,4 +1,5 @@
 import type { treeNode } from "../types/types"
+import "./TreeNode.css"
 
 interface Props {
   node: treeNode;
@@ -6,7 +7,7 @@ interface Props {
 
 export const TreeNode = (props: Props) => {
   return (
-    <li>
+    <li className="tree-node">
       {props.node.name}
       {props.node.children && props.node.children.length > 0 && (
         <ul>
@@ -18,8 +19,8 @@ export const TreeNode = (props: Props) => {
       {props.node.items && props.node.items.length > 0 && (
         <ul>
           {props.node.items!.map((item) => (
-            <li key={item.item_id}>
-              <strong>{item.name}</strong>
+            <li key={item.item_id} className="item">
+              <u>{item.name}</u>
             </li>
           ))}
         </ul>
