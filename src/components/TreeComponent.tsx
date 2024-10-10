@@ -15,7 +15,7 @@ export const TreeComponent = (props: Props) => {
   return (
     <ul>
       {treeData.map((node) => (
-        <TreeNode key={node.id} node={node} />
+        <TreeNode key={node.id} node={node} selectedItem={props.value} onSelectItem={props.onChange} />
       ))}
     </ul>
   )
