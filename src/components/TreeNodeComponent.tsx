@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { treeNode } from "../types/types"
 import "./TreeNode.css"
 
@@ -6,17 +7,25 @@ interface Props {
 }
 
 export const TreeNode = (props: Props) => {
+  const [isExpanded, setIsExpanded] = useState<Boolean>(false);
+
+  const toggleNode = () => {
+    setIsExpanded(!isExpanded);
+  }
+
   return (
     <li className="tree-node">
-      {props.node.name}
-      {props.node.children && props.node.children.length > 0 && (
+      <div onClick={toggleNode}>
+        {(props.node.children || props.node.items) && (isExpanded ? '[-] ' : '[+] ')}{props.node.name}
+      </div>
+      {isExpanded && props.node.children && props.node.children.length > 0 && (
         <ul>
           {props.node.children!.map(child => (
             <TreeNode key={child.id} node={child} />
           ))}
         </ul>
       )}
-      {props.node.items && props.node.items.length > 0 && (
+      {isExpanded && props.node.items && props.node.items.length > 0 && (
         <ul>
           {props.node.items!.map((item) => (
             <li key={item.item_id} className="item">
