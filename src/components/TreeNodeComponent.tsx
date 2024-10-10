@@ -15,6 +15,15 @@ export const TreeNode = (props: Props) => {
           ))}
         </ul>
       )}
+      {props.node.items!.length && (
+        <ul>
+          {props.node.items!.map((item) => (
+            <li key={item.item_id}>
+              <strong>{item.name}</strong>
+            </li>
+          ))}
+        </ul>
+      )}
     </li>
   )
 }
