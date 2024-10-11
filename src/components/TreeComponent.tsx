@@ -20,19 +20,21 @@ export const TreeComponent = (props: Props) => {
       .map((node) => {
         const isMatch = node.name.toLowerCase().includes(query.toLowerCase());
         const children = node.children ? filterTreeData(node.children, query) : [];
+
+        const isVisible = isMatch || children.length > 0;
+
         return {
           ...node,
-          children: children,
-          isVisible: isMatch || (node.children!.length > 0)
+          children: isMatch ? node.children : children,
+          isVisible: isVisible
         };
       })
       .filter((node) => node.isVisible);
   }
 
   useEffect(() => {
-    setFilteredGodowns(filterTreeData(filteredGodowns, props.search));
-  }, [props.search, treeData]);
-  // setFilteredGodowns(filterTreeData(treeData, props.search));
+    setFilteredGodowns(filterTreeData(treeData, props.search));
+  }, [props.search, filterTreeData]);
 
   return (
     <ul>
