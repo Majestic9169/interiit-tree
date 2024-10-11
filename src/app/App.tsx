@@ -9,6 +9,10 @@ function App() {
   const [selected, select] = useState<string | null>(null);
   const [searchItem, setSearchItem] = useState<string>('')
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value.toLowerCase();
+    setSearchItem(query);
+  }
 
   return (
     <>
@@ -16,11 +20,13 @@ function App() {
         <input
           type="text"
           value={searchItem}
-          placeholder="type to search"
+          onChange={handleSearch}
+          placeholder="type to search godowns"
         />
       </div>
       <div className="App">
         <TreeComponent
+          search={searchItem}
           value={selected}
           onChange={select}
           data={GodownData}

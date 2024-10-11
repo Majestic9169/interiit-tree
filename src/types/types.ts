@@ -26,6 +26,7 @@ export type Items = Item[]
 export interface treeNode extends GodownData {
   children?: treeNode[]
   items?: Item[]
+  isVisible: boolean
 }
 
 export type Tree = treeNode[]
