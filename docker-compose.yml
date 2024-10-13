@@ -1,0 +1,16 @@
+services: 
+  frontend: 
+    build: 
+      context: ./tree-app
+      dockerfile: DOCKERFILE
+    ports: 
+      - "3000:3000"
+    depends_on: 
+      - backend
+
+  backend: 
+    build: 
+      context: ./tree-app-backend
+      dockerfile: DOCKERFILE
+    ports:
+      - "5000:5000"

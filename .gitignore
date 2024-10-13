@@ -2,6 +2,7 @@
 
 # dependencies
 tree-app-frontend/node_modules
+tree-app-backend/node_modules
 tree-app-frontend/.pnp
 tree-app-frontend/.pnp.js
 
