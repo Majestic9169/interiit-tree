@@ -1,7 +1,7 @@
 services: 
   frontend: 
     build: 
-      context: ./tree-app
+      context: ./tree-app-frontend/
       dockerfile: DOCKERFILE
     ports: 
       - "3000:3000"
