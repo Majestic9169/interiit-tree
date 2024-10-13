@@ -1,23 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+tree-app-frontend/node_modules
+tree-app-frontend/.pnp
+tree-app-frontend/.pnp.js
 
 # testing
-/coverage
+tree-app-frontend/coverage
 
 # production
-/build
+tree-app-frontend/build
 
 # misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+tree-app-frontend/.DS_Store
+tree-app-frontend/.env.local
+tree-app-frontend/.env.development.local
+tree-app-frontend/.env.test.local
+tree-app-frontend/.env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+tree-app-frontend/npm-debug.log*
+tree-app-frontend/yarn-debug.log*
+tree-app-frontend/yarn-error.log*
