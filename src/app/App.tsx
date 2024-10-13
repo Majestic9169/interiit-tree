@@ -16,10 +16,14 @@ function App() {
     setSearchItem(query);
   }
 
+  const handleLogin = () => {
+    setAuth(true);
+  }
+
   return (
     <>
       {!auth ? (
-        <Login auth={auth} setAuth={setAuth} />
+        <Login onLogin={handleLogin} />
       ) : (
         <>
           <div className='input'>

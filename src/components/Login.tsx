@@ -1,8 +1,8 @@
+import axios from "axios";
 import { useState } from "react"
 
 type Props = {
-  auth: boolean;
-  setAuth: (auth: boolean) => any;
+  onLogin: () => any
 }
 
 export const Login = (props: Props) => {
@@ -10,28 +10,21 @@ export const Login = (props: Props) => {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email || !password) {
-      setError("Please Fill in all Fields");
-      return;
+
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        email,
+        password,
+      });
+
+      sessionStorage.setItem("token", response.data.token);
+      props.onLogin();
+    } catch (err) {
+      setError('Invalid Credentials');
     }
-
-    if (password === "interiit") {
-      props.setAuth(true);
-    } else {
-      setError("wrong password");
-      return;
-    }
-
-    console.log(email);
-    console.log(password);
-    console.log(error);
-
-    setEmail("");
-    setPassword("");
-    setError("");
-  }
+  };
 
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px' }}>
