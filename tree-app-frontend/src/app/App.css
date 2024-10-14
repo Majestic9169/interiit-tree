@@ -3,7 +3,7 @@ html, body {
   margin: 0;
 }
 
-.App {
+.tree {
   display: flex;
   flex-direction: row;
 }
@@ -23,8 +23,48 @@ html, body {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  padding-left: 3rem;
 }
 
 .login-image {
   width: 300px;
+}
+
+.main-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 200, 200, 0.8), rgba(200, 200, 255, 0.8), rgba(200, 255, 200, 0.8));
+}
+
+.search-panel {
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  margin: 0.2rem;
+  background-color: #BE6081;
+}
+
+.search-panel input[type=text] {
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: 9px;
+  border: none;
+  margin: 16px 14px;
+  font-size: 18px;
+  background-color: #F4ADCD;
+  text-align: left;
+  text-indent: 8px;
+  outline: none;
+}
+
+.tree-and-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

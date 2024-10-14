@@ -57,35 +57,45 @@ function App() {
           <Login onLogin={handleLogin} />
         </div>
       ) : (
-        <>
-          <div className='input'>
-            <input
-              type="text"
-              value={searchGodown}
-              onChange={handleGodownSearch}
-              placeholder="type to search godowns"
-            />
-            <input
-              type="text"
-              value={searchItem}
-              onChange={handleItemSearch}
-              placeholder="type to search items"
-            />
+        <div className='main-page'>
+          <div className='search-panel'>
+            <span>
+              <input
+                type="text"
+                value={searchGodown}
+                onChange={handleGodownSearch}
+                placeholder="🔍 Godown Name"
+              />
+              <span className='search-panel-icon'>
+              </span>
+            </span>
+            <span>
+              <input
+                type="text"
+                value={searchItem}
+                onChange={handleItemSearch}
+                placeholder="🔍 Item Name"
+              />
+              <span className='search-panel-icon'>
+              </span>
+            </span>
           </div>
-          <div className="App">
-            <TreeComponent
-              searchGodown={searchGodown}
-              searchItem={searchItem}
-              value={selected}
-              onChange={select}
-              data={GodownData!}
-              items={ItemsData!}
-            />
-            <div className="item-display">
-              <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />
+          <div className='tree-and-item'>
+            <div className="tree">
+              <TreeComponent
+                searchGodown={searchGodown}
+                searchItem={searchItem}
+                value={selected}
+                onChange={select}
+                data={GodownData!}
+                items={ItemsData!}
+              />
+              <div className="item-display">
+                <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />
+              </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );
