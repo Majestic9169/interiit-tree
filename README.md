@@ -70,5 +70,5 @@ Due to the time crunch, I decided it was best to create functional frontend and 
 - A statistics panel would also be great, but I don't think I have time for that at all
 
 ### Backend: 
-- Backend was added very late, and only for the purpose of authentication using JWT. But since the godown/item data is currently living in the frontend this is very useless. So the next step is to move our JSON data to the backend server.
+- [x] Backend was added very late, and only for the purpose of authentication using JWT. But since the godown/item data is currently living in the frontend this is very useless. So the next step is to move our JSON data to the backend server.
 

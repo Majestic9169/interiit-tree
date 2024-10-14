@@ -1,3 +1,6 @@
+const Godowns = require("./data/godowns.json");
+const Items = require("./data/items.json");
+
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
@@ -25,6 +28,14 @@ app.post('/login', (req, res) => {
   }
 
   return res.status(401).json({ message: "Invalid Credentials" });
+})
+
+app.get('/data/godowns', (req, res) => {
+  res.json(Godowns);
+})
+
+app.get('/data/items', (req, res) => {
+  res.json(Items);
 })
 
 app.listen(PORT, () => {

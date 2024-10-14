@@ -1,16 +1,18 @@
 import { TreeComponent } from '../components/TreeComponent';
 import './App.css';
-import GodownData from "../data/godowns.json"
-import ItemsData from "../data/items.json"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ItemDisplay } from '../components/ItemDisplay';
 import { Login } from '../components/Login';
+import axios from 'axios';
+import { Godowns, Items } from '../types/types';
 
 function App() {
   const [selected, select] = useState<string | null>(null);
   const [searchGodown, setSearchGodown] = useState<string>('');
   const [searchItem, setSearchItem] = useState<string>('');
   const [auth, setAuth] = useState<boolean>(false);
+  const [GodownData, setGodownData] = useState<Godowns | null>(null);
+  const [ItemsData, setItemsData] = useState<Items | null>(null);
 
   const handleItemSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
@@ -25,6 +27,24 @@ function App() {
   const handleLogin = () => {
     setAuth(true);
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response1 = await axios.get('http://localhost:5000/data/godowns');
+        const response2 = await axios.get('http://localhost:5000/data/items');
+
+        setGodownData(response1.data);
+        setItemsData(response2.data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        console.log('Data Succesfully fetched');
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -52,11 +72,11 @@ function App() {
               searchItem={searchItem}
               value={selected}
               onChange={select}
-              data={GodownData}
-              items={ItemsData}
+              data={GodownData!}
+              items={ItemsData!}
             />
             <div className="item-display">
-              <ItemDisplay selectedItem={selected} />
+              <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />
             </div>
           </div>
         </>
