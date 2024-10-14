@@ -27,6 +27,7 @@ export interface treeNode extends GodownData {
   children?: treeNode[]
   items?: Item[]
   isVisible: boolean
+  matchedItems: Items
 }
 
 export type Tree = treeNode[]

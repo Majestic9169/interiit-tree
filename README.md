@@ -62,7 +62,7 @@ Due to the time crunch, I decided it was best to create functional frontend and 
 
 ### Frontend: 
 - I need to create a proper component to display item details, so far only name and image are displayed. 
-- I can add another search bar for searching by item, very similar to the current one for searching by godown.
+- [x] I can add another search bar for searching by item, very similar to the current one for searching by godown.
 - I could add an expand-all/collapse-all button
 - Everything can be styled better 
 - The JWT Token is currently stored in `sessionStorage` which is not very secure. I have to look into storing it as a cookie

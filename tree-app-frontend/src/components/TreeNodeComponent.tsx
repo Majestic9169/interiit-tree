@@ -30,9 +30,9 @@ export const TreeNode = (props: Props) => {
           ))}
         </ul>
       )}
-      {isExpanded && props.node.items && props.node.items.length > 0 && (
+      {isExpanded && props.node.matchedItems && props.node.matchedItems.length > 0 && (
         <ul>
-          {props.node.items!.map((item) => (
+          {props.node.matchedItems.map((item) => (
             <li
               key={item.item_id}
               className="item"

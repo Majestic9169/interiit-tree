@@ -8,12 +8,18 @@ import { Login } from '../components/Login';
 
 function App() {
   const [selected, select] = useState<string | null>(null);
+  const [searchGodown, setSearchGodown] = useState<string>('');
   const [searchItem, setSearchItem] = useState<string>('');
   const [auth, setAuth] = useState<boolean>(false);
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleItemSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
     setSearchItem(query);
+  }
+
+  const handleGodownSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value.toLowerCase();
+    setSearchGodown(query);
   }
 
   const handleLogin = () => {
@@ -29,14 +35,21 @@ function App() {
           <div className='input'>
             <input
               type="text"
-              value={searchItem}
-              onChange={handleSearch}
+              value={searchGodown}
+              onChange={handleGodownSearch}
               placeholder="type to search godowns"
+            />
+            <input
+              type="text"
+              value={searchItem}
+              onChange={handleItemSearch}
+              placeholder="type to search items"
             />
           </div>
           <div className="App">
             <TreeComponent
-              search={searchItem}
+              searchGodown={searchGodown}
+              searchItem={searchItem}
               value={selected}
               onChange={select}
               data={GodownData}

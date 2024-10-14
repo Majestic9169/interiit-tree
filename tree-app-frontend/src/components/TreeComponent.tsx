@@ -6,20 +6,21 @@ import { TreeNode } from "./TreeNodeComponent";
 interface Props {
   data: Godowns
   items: Items
-  search: string
+  searchGodown: string
+  searchItem: string
   value: string | null // selected element
   onChange: (id: string) => void // method to select element
 }
 
 export const TreeComponent = (props: Props) => {
   const treeData: Tree = transformDatatoTree(props.data, props.items);
-  const [filteredGodowns, setFilteredGodowns] = useState<Tree>(treeData);
+  const [filteredData, setFilteredData] = useState<Tree>(treeData);
 
-  const filterTreeData = (data: Tree, query: string): Tree => {
+  const filterGodownData = (data: Tree, query: string): Tree => {
     return data
       .map((node) => {
         const isMatch = node.name.toLowerCase().includes(query.toLowerCase());
-        const children = node.children ? filterTreeData(node.children, query) : [];
+        const children = node.children ? filterGodownData(node.children, query) : [];
 
         const isVisible = isMatch || children.length > 0;
 
@@ -32,13 +33,34 @@ export const TreeComponent = (props: Props) => {
       .filter((node) => node.isVisible);
   }
 
+  const filterItemData = (data: Tree, query: string): Tree => {
+    return data
+      .map((node) => {
+        const matchedItems = node.items ? node.items.filter(item => item.name.toLowerCase().includes(query.toLowerCase())) : [];
+
+        const children = node.children ? filterItemData(node.children, query) : [];
+
+        const isVisible = matchedItems.length > 0 || children.length > 0;
+
+        return {
+          ...node,
+          children: isVisible ? children : [],
+          matchedItems: matchedItems,
+          isVisible: isVisible,
+        }
+      })
+      .filter((node) => node.isVisible);
+  }
+
   useEffect(() => {
-    setFilteredGodowns(filterTreeData(treeData, props.search));
-  }, [props.search, filterTreeData]);
+    const filteredbyGodown = filterGodownData(treeData, props.searchGodown);
+    const finalFilteredData = filterItemData(filteredbyGodown, props.searchItem);
+    setFilteredData(finalFilteredData);
+  }, [props.searchGodown, props.searchItem, treeData]);
 
   return (
     <ul>
-      {filteredGodowns.map((node) => (
+      {filteredData.map((node) => (
         <TreeNode key={node.id} node={node} selectedItem={props.value} onSelectItem={props.onChange} />
       ))}
     </ul>

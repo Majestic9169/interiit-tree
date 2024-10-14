@@ -10,7 +10,7 @@ services:
 
   backend: 
     build: 
-      context: ./tree-app-backend
+      context: ./tree-app-backend/
       dockerfile: DOCKERFILE
     ports:
       - "5000:5000"

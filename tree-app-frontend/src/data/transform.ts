@@ -5,7 +5,7 @@ export const transformDatatoTree = (godownData: Godowns, itemData: Items) => {
   const tree: Tree = [];
 
   godownData.forEach((godown) => {
-    hashMap[godown.id] = { ...godown, children: [], items: [], isVisible: true };
+    hashMap[godown.id] = { ...godown, children: [], items: [], isVisible: true, matchedItems: [] };
   })
 
   itemData.forEach((item) => {
