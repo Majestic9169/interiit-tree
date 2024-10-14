@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
+import "./Login.css"
 
 type Props = {
   onLogin: () => any
@@ -27,29 +28,29 @@ export const Login = (props: Props) => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px' }}>
-      <h2>Login</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
+    <div className="login-container">
+      <h2 className="login-title">Enter Credentials</h2>
+      {error && <p className="error-message" style={{ color: 'red' }}>{error}</p>}
+      <form className="login-form" onSubmit={handleSubmit}>
+        <div className="form-container">
           <input
             type="email"
+            placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>Password:</label>
+        <div className="form-container">
           <input
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="login-button" type="submit">Login</button>
       </form>
     </div>
   )

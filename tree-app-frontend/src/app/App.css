@@ -1,8 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
   display: flex;
   flex-direction: row;
 }
 
-.item-display {
+.login-component {
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 200, 200, 0.8), rgba(200, 200, 255, 0.8), rgba(200, 255, 200, 0.8));
 }
 
+.login-hero {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.login-image {
+  width: 300px;
+}

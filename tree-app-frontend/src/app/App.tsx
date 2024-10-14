@@ -49,7 +49,13 @@ function App() {
   return (
     <>
       {!auth ? (
-        <Login onLogin={handleLogin} />
+        <div className='login-component'>
+          <div className='login-hero'>
+            <h2 className='login-header'>👀 View Your Godown Data!</h2>
+            <img className='login-image' src='https://cdn4.iconfinder.com/data/icons/logistics-55/50/4-512.png' />
+          </div>
+          <Login onLogin={handleLogin} />
+        </div>
       ) : (
         <>
           <div className='input'>
