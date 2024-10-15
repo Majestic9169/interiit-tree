@@ -55,16 +55,21 @@ node server.js
 
 1. I was visiting family during this Durga Puja vacation and thus could not give as much time as I would have liked to this project. You can go through my commit history to see that I was able to devote a proper amount of time only on the first day
 1. Because I was not at college during the vacation, I was rejected by Github for their Student Developer's pack since they couldn't verify it. I have applied again today (Sunday) and have not received a response yet, preventing me from manually deploying my app
+1. Namely in styling, I faced several issues.
+    1. The Tree Panel at the left for some reason does not completely cover all the children of the tree. When I expand my tree very much, the background is unable to cover the children, and I don't understand why.
+    1. I had a lot of trouble trying to get the search bar to fixed in position so that it will always be visible, but I couldn't get the exact values needed to keep it at those coordinates, and couldn't implement this.
+    1. The image in the items display is currently being "cropped" to fit in the frame I created for it. 
+
 
 # Looking Forward
 
 Due to the time crunch, I decided it was best to create functional frontend and deploy the app before tweaking it further. However due to the reasons listed above I was unable to deploy my app. Nevertheless there are many things I want to improve
 
 ### Frontend: 
-- I need to create a proper component to display item details, so far only name and image are displayed. 
+- [x] I need to create a proper component to display item details, so far only name and image are displayed. 
 - [x] I can add another search bar for searching by item, very similar to the current one for searching by godown.
 - I could add an expand-all/collapse-all button
-- Everything can be styled better 
+- [x] Everything can be styled better 
 - The JWT Token is currently stored in `sessionStorage` which is not very secure. I have to look into storing it as a cookie
 - I have not looked into drag-and-drop yet, but given time I would like to add that
 - A statistics panel would also be great, but I don't think I have time for that at all
