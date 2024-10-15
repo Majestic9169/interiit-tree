@@ -41,22 +41,42 @@ export const ItemDisplay = (props: Props) => {
               {getRootParent(currentItem.godown_id)}
             </div>
           </span>
+          <div className="item-name">
+            <h2 className="item-name-header">{currentItem.name.split(" ")[0]}</h2>
+            <h4 className="item-name-remaining">{currentItem.name.split(" ").slice(1).join(" ")}</h4>
+            <p className="item-price">${currentItem.price.toFixed(2)}</p>
+          </div>
           <div className="product-details">
             <div className="left">
-              <div className="item-name">
-                <h2 className="item-name-header">{currentItem.name.split(" ")[0]}</h2>
-                <h4 className="item-name-remaining">{currentItem.name.split(" ").slice(1).join(" ")}</h4>
-                <p className="item-price">${currentItem.price.toFixed(2)}</p>
-              </div>
               <img className="item-image" src={currentItem.image_url} alt={currentItem.name} />
             </div>
             <div className="right">
-              <p>{getParent(currentItem.godown_id)}</p>
-              <p className="item-stock">{currentItem.quantity > 0 ? `${currentItem.quantity} in stock` : `out of stock`}</p>
-              <h4> attributes </h4>
-              {currentItem.attributes && Object.entries(currentItem.attributes).map(([key, value]) => (
-                <p key={key}>{`${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`}</p>
-              ))}
+              <h2 className="godown-parent">{getParent(currentItem.godown_id)}</h2>
+              <p
+                className="item-stock"
+                style={{ color: currentItem.quantity > 0 ? "#4caf50" : "#d50032" }}
+              >
+                {currentItem.quantity > 0 ? (
+                  <>
+                    <strong>{currentItem.quantity}</strong> left in stock
+                  </>
+                ) : (
+                  "Out of stock"
+                )}
+              </p>
+              <h4>Attributes</h4>
+              {currentItem.attributes && (
+                <ul className="attributes-list">
+                  {Object.entries(currentItem.attributes).map(([key, value]) => (
+                    <li key={key} className="attribute-item">
+                      <span className="attribute-name">
+                        {key.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase())}
+                      </span>
+                      <span className="attribute-value">{value}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </>

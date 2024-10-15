@@ -108,12 +108,13 @@ html, body {
 }
 
 .item-header{
-  background-color: #007b7f;
+  /* background-color: #007b7f; */
   border-radius: 30px;
   /* padding: 0.1rem 0.75rem; */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 .item-header h1 {
@@ -121,7 +122,7 @@ html, body {
   border-radius: 30px;
   text-indent: 1rem;
   color: #666;
-  width: 95%;
+  width: 100%;
   font-weight: 500;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
   padding: 0.1rem;
