@@ -46,8 +46,8 @@ export const ItemDisplay = (props: Props) => {
               <div className="item-name">
                 <h2 className="item-name-header">{currentItem.name.split(" ")[0]}</h2>
                 <h4 className="item-name-remaining">{currentItem.name.split(" ").slice(1).join(" ")}</h4>
+                <p className="item-price">${currentItem.price.toFixed(2)}</p>
               </div>
-              <p className="item-price">${currentItem.price.toFixed(2)}</p>
               <img className="item-image" src={currentItem.image_url} alt={currentItem.name} />
             </div>
             <div className="right">
