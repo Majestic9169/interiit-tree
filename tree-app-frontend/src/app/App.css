@@ -48,7 +48,7 @@ html, body {
   border-radius: 30px;
   /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2); */
   margin: 0.2rem;
-  background-color: #BE6081;
+  background-color: #007b7fbf;
 }
 
 .search-panel input[type=text] {
@@ -59,7 +59,7 @@ html, body {
   margin: 0.5rem 0.75rem;
   font-size: 1rem;
   width: 80%;
-  background-color: #F4ADCD;
+  background-color: #e0bbe4;
   text-align: left;
   text-indent: 8px;
   outline: none;
@@ -80,7 +80,7 @@ html, body {
   flex-direction: column;
   border-radius: 30px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
-  background-color: #BE6081;
+  background-color: #007b7f99;
   text-align: left;
   margin: 1rem;
   padding: 8px;
