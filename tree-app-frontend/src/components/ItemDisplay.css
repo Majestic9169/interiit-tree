@@ -1,17 +1,33 @@
 .product-card {
     border: 1px solid #ccc;
     border-radius: 30px;
-    margin: 20px;
+    margin-top: 20px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #007b7f99;
+    background-color: #e0bbe4;
+    height: 100vh;
 }
 
-.godown-id {
-    background-color: #f0f0f0;
-    padding: 10px;
+.godown-header {
+    display: flex;
+    align-items: center;
+    width: 97%;
+}
+
+.colored-bar {
+    background-color: #007b7f;
+    width: 60%;
+    height: 1.5rem;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.godown-name {
+    flex: 1;
     font-weight: bold;
     text-align: center;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .product-details {
@@ -25,10 +41,9 @@
     margin-right: 10px;
 }
 
-.left img {
+.item-image {
     max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+    max-height: 60%
 }
 
 .right {
@@ -36,4 +51,26 @@
     margin-left: 10px;
     border-left: 1px solid #ccc;
     padding-left: 10px;
+}
+
+.item-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.item-name-header {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.item-name-remaining {
+    font-weight: 300;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.6);
+    margin: 0;
+    line-height: 1;
 }

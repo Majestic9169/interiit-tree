@@ -89,7 +89,10 @@ function App() {
               </div>
             </div>
             <div className="item-display">
-              <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />
+              <div className='item-header'>
+                <h1>Item Information</h1>
+              </div>
+              <ItemDisplay godownsData={GodownData!} selectedItem={selected} itemsData={ItemsData!} />
             </div>
           </div>
         </div>
