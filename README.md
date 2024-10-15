@@ -4,9 +4,18 @@
 1. Creating the tree components
 1. Enable selecting Items
 1. Display Item details
-1. Search feature
+1. Search feature (godowns)
 1. JWT Authentication for Login
 1. Dockerise
+1. Add search by item
+1. Move data to backend
+1. Style everything
+
+# Screenshots
+
+![login-page](./assets/small-login-page.png)
+![tree app with zara item being displayed](./assets/item1.png)
+![tree app with apple item being displayed](./assets/item2.png)
 
 # Development
 
