@@ -12,9 +12,29 @@ export const ItemDisplay = (props: Props) => {
   })
 
   return (
-    <div className="item-display">
-      <img src={currentItem?.image_url} alt={currentItem?.name} />
-      <h2>{currentItem?.name}</h2>
+    <div className="product-card">
+      {currentItem && (
+        <>
+          <div className="godown-id">
+            {currentItem.godown_id}
+          </div>
+          <div className="product-details">
+            <div className="left">
+              <h2 className="item-name">{currentItem.name}</h2>
+              <p className="item-price">${currentItem.price.toFixed(2)}</p>
+              <img className="item-image" src={currentItem.image_url} alt={currentItem.name} />
+            </div>
+            <div className="right">
+              <p>{currentItem.godown_id}</p>
+              <p className="item-stock">{currentItem.quantity > 0 ? `${currentItem.quantity} in stock` : `out of stock`}</p>
+              <h4> attributes </h4>
+              {currentItem.attributes && Object.entries(currentItem.attributes).map(([key, value]) => (
+                <p key={key}>{`${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`}</p>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 }
