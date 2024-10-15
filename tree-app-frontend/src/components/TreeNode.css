@@ -17,7 +17,7 @@
 }
 
 .node-header:hover {
-  background-color: #007b7f;
+  background-color: #007b7fbf;
   border: 0.1px solid #010101;
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 

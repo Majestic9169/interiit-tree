@@ -44,7 +44,7 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [auth]);
 
   return (
     <>
@@ -74,14 +74,19 @@ function App() {
                   placeholder="🔍 Item Name"
                 />
               </div>
-              <TreeComponent
-                searchGodown={searchGodown}
-                searchItem={searchItem}
-                value={selected}
-                onChange={select}
-                data={GodownData!}
-                items={ItemsData!}
-              />
+              <div className='tree-component' style={
+                { backgroundColor: "#e0bbe4", borderRadius: 30, marginTop: 8, height: "max-content", display: "flex", marginBottom: 12, minHeight: "100vh" }
+              }
+              >
+                <TreeComponent
+                  searchGodown={searchGodown}
+                  searchItem={searchItem}
+                  value={selected}
+                  onChange={select}
+                  data={GodownData!}
+                  items={ItemsData!}
+                />
+              </div>
             </div>
             <div className="item-display">
               <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />

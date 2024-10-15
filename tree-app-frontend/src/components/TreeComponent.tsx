@@ -60,7 +60,7 @@ export const TreeComponent = (props: Props) => {
 
   return (
     <ul style={
-      { paddingLeft: 0, backgroundColor: "#e0bbe4", borderRadius: "30px", height: "100vh" }
+      { paddingLeft: 0, backgroundColor: "#e0bbe4", borderRadius: "30px", height: "100%" }
     }>
       {filteredData.map((node) => (
         <TreeNode key={node.id} node={node} selectedItem={props.value} onSelectItem={props.onChange} />
