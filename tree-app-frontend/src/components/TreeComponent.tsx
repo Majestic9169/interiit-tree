@@ -59,7 +59,9 @@ export const TreeComponent = (props: Props) => {
   }, [props.searchGodown, props.searchItem, treeData]);
 
   return (
-    <ul>
+    <ul style={
+      { paddingLeft: 0, backgroundColor: "#faadcd", borderRadius: "30px", height: "100vh" }
+    }>
       {filteredData.map((node) => (
         <TreeNode key={node.id} node={node} selectedItem={props.value} onSelectItem={props.onChange} />
       ))}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { treeNode } from "../types/types"
 import "./TreeNode.css"
 import { FaFile } from "react-icons/fa";
-import { SlArrowRight, SlArrowDown } from "react-icons/sl";
+import { MdExpandMore, MdChevronRight } from "react-icons/md";
 import { FaWarehouse } from "react-icons/fa6";
 
 interface Props {
@@ -20,18 +20,18 @@ export const TreeNode = (props: Props) => {
 
   return (
     <li className="tree-node">
-      <div onClick={toggleNode}>
-        {(props.node.children || props.node.items) && (isExpanded ? <SlArrowDown /> : <SlArrowRight />)} <FaWarehouse /> <span>{props.node.name}</span>
+      <div onClick={toggleNode} className="node-header">
+        {(props.node.children || props.node.items) && (isExpanded ? <MdExpandMore /> : <MdChevronRight />)} <FaWarehouse className="icon" /> <span className="node-name">{props.node.name}</span>
       </div>
       {isExpanded && props.node.children && props.node.children.length > 0 && (
-        <ul>
+        <ul className="child-nodes">
           {props.node.children!.map(child => (
             <TreeNode key={child.id} node={child} selectedItem={props.selectedItem} onSelectItem={props.onSelectItem} />
           ))}
         </ul>
       )}
       {isExpanded && props.node.matchedItems && props.node.matchedItems.length > 0 && (
-        <ul>
+        <ul className="matched-items">
           {props.node.matchedItems.map((item) => (
             <li
               key={item.item_id}
@@ -41,7 +41,7 @@ export const TreeNode = (props: Props) => {
                 backgroundColor: props.selectedItem?.includes(item.item_id) ? "#d3d3d3" : "",
               }}
             >
-              <FaFile /><u>{item.name}</u>
+              <FaFile className="item-icon" /><u>{item.name}</u>
             </li>
           ))}
         </ul>

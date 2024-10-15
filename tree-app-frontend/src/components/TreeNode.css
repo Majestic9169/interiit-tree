@@ -2,27 +2,59 @@
   text-align: left;
   margin: 0;
   list-style-type: none;
-  /* padding-left: 1.5rem; */
+  padding: 0;
 }
 
-.tree-node li {
-  margin: 0.5rem 0;
-  position: relative;
-  font-size: 1rem;
+.node-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  color: #555;
+  border-radius: 5px;
+  background-color: #f4adcd;
+  transition: background-color 0.3s transform 0.3s box-shadow 0.3s;
 }
 
-.tree-node ul {
-  list-style-type: none;
-  border-left: 0.1rem solid #ccc;
-  padding-left: 1.5rem;
+.node-header:hover {
+  background-color: #be6081;
+  border: 0.1px solid #010101;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  color: #222;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: #007b7f;
+}
+
+.node-name {
+  font-weight: bold;
+}
+
+.child-nodes .matched-items {
+  padding-left: 12px;
   margin: 0;
 }
 
-.tree-node .item:hover {
-  background-color: #f0f0f0;
+.item {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.3s transform 0.3s box-shadow 0.3s;
 }
 
-.tree-node:hover {
-  cursor: pointer;
+.tree-node .item:hover {
+  background-color: #a8e6cf;
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.5), 
+              inset 0 -1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.item-icon {
+  margin-right: 0.5rem;
+  color: #036;
 }
