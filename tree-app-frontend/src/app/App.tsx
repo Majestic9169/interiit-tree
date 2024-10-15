@@ -58,30 +58,22 @@ function App() {
         </div>
       ) : (
         <div className='main-page'>
-          <div className='search-panel'>
-            <span>
-              <input
-                type="text"
-                value={searchGodown}
-                onChange={handleGodownSearch}
-                placeholder="🔍 Godown Name"
-              />
-              <span className='search-panel-icon'>
-              </span>
-            </span>
-            <span>
-              <input
-                type="text"
-                value={searchItem}
-                onChange={handleItemSearch}
-                placeholder="🔍 Item Name"
-              />
-              <span className='search-panel-icon'>
-              </span>
-            </span>
-          </div>
           <div className='tree-and-item'>
             <div className="tree">
+              <div className='search-panel'>
+                <input
+                  type="text"
+                  value={searchGodown}
+                  onChange={handleGodownSearch}
+                  placeholder="🔍 Godown Name"
+                />
+                <input
+                  type="text"
+                  value={searchItem}
+                  onChange={handleItemSearch}
+                  placeholder="🔍 Item Name"
+                />
+              </div>
               <TreeComponent
                 searchGodown={searchGodown}
                 searchItem={searchItem}
@@ -90,9 +82,9 @@ function App() {
                 data={GodownData!}
                 items={ItemsData!}
               />
-              <div className="item-display">
-                <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />
-              </div>
+            </div>
+            <div className="item-display">
+              <ItemDisplay selectedItem={selected} itemsData={ItemsData!} />
             </div>
           </div>
         </div>
