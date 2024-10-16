@@ -59,6 +59,7 @@ node server.js
 
 1. The frontend and backend been dockerised with docker-compose
 1. I have applied for the Github student developer's pack for my free credits to manually deploy this app, however I did have not received a reply yet. The moment I get my credits I will manually deploy  this app.
+1. Today I made an AWS Free Tier account, and tried to deploy it on an EC2 instance, however I lost my patience with the long build times and tried making swap files and other solutions I could think of, however those haven't worked yet.
 
 # Issues Faced
 
