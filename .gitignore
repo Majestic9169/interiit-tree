@@ -10,7 +10,7 @@ tree-app-frontend/.pnp.js
 tree-app-frontend/coverage
 
 # production
-tree-app-frontend/build
+# tree-app-frontend/build
 
 # misc
 tree-app-frontend/.DS_Store
