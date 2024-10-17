@@ -10,6 +10,7 @@
 1. Add search by item
 1. Move data to backend
 1. Style everything
+1. Deploy
 
 # Screenshots
 
@@ -59,16 +60,19 @@ node server.js
 
 1. The frontend and backend been dockerised with docker-compose
 1. I have applied for the Github student developer's pack for my free credits to manually deploy this app, however I did have not received a reply yet. The moment I get my credits I will manually deploy  this app.
-1. Today I made an AWS Free Tier account, and tried to deploy it on an EC2 instance, however I lost my patience with the long build times and tried making swap files and other solutions I could think of, however those haven't worked yet.
+1. ~~Today I made an AWS Free Tier account, and tried to deploy it on an EC2 instance, however I lost my patience with the long build times and tried making swap files and other solutions I could think of, however those haven't worked yet.~~
+1. I learnt that EC2 instances can not handle running `npm run build` and that you are supposed to serve your static files directly. I have now deployed my website to the internet on the ip-address given to the right: [http://3.109.155.99/](http://3.109.155.99/)
+  , however I am still facing issues with it. I think the `/login` endpoint is not working currently because of some CORS issue.
 
 # Issues Faced
 
 1. I was visiting family during this Durga Puja vacation and thus could not give as much time as I would have liked to this project. You can go through my commit history to see that I was able to devote a proper amount of time only on the first day
-1. Because I was not at college during the vacation, I was rejected by Github for their Student Developer's pack since they couldn't verify it. I have applied again today (Sunday) and have not received a response yet, preventing me from manually deploying my app
+1. Because I was not at college during the vacation, I was rejected by Github for their Student Developer's pack since they couldn't verify it. I have applied again today (Sunday) and have not received a response yet, preventing me from manually deploying my app on time
 1. Namely in styling, I faced several issues.
     1. The Tree Panel at the left for some reason does not completely cover all the children of the tree. When I expand my tree very much, the background is unable to cover the children, and I don't understand why.
     1. I had a lot of trouble trying to get the search bar to fixed in position so that it will always be visible, but I couldn't get the exact values needed to keep it at those coordinates, and couldn't implement this.
     1. The image in the items display is currently being "cropped" to fit in the frame I created for it. 
+    1. I have been given feedback that the color scheme is not good
 
 
 # Looking Forward
