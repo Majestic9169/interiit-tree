@@ -38,7 +38,7 @@ export const TreeNode = (props: Props) => {
               className="item"
               onClick={() => props.onSelectItem(item.item_id)}
               style={{
-                backgroundColor: props.selectedItem?.includes(item.item_id) ? "#b9fbc099" : "",
+                backgroundColor: props.selectedItem?.includes(item.item_id) ? "#999" : "",
                 fontWeight: props.selectedItem?.includes(item.item_id) ? "bold" : "",
               }}
             >

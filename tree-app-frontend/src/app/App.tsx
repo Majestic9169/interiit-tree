@@ -75,7 +75,7 @@ function App() {
                 />
               </div>
               <div className='tree-component' style={
-                { backgroundColor: "#e0bbe4", borderRadius: 30, marginTop: 8, height: "max-content", display: "flex", marginBottom: 12, minHeight: "100vh" }
+                { backgroundColor: "transparent", borderRadius: 30, marginTop: 8, height: "max-content", display: "flex", marginBottom: 12, minHeight: "100vh" }
               }
               >
                 <TreeComponent

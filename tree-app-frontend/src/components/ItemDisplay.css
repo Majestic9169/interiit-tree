@@ -4,7 +4,9 @@
     margin-top: 20px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #e0bbe4;
+    /* background-color: #e0bbe4; */
+    /* background-color: #fff; */
+    background-color: transparent;
     height: 100vh;
 }
 
@@ -15,7 +17,8 @@
 }
 
 .colored-bar {
-    background-color: #007b7f;
+    /* background-color: #007b7f; */
+    /* background-color: #000; */
     width: 60%;
     height: 1.5rem;
     border-radius: 30px;
@@ -51,7 +54,7 @@
     border-radius: 30px;
     border: 2px solid #007b7f;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #007b7f;
 }
 
@@ -81,7 +84,7 @@
     font-weight: 400;
     font-size: 1rem;
     text-transform: uppercase;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     margin: 0;
     line-height: 1;
 }
